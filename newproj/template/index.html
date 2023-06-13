@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+    <body>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <div class="head">
+            <h1>SHIVA's Blog</h1>
+        </div><br>
+        {% for post in posts reversed %}
+        <div class="row"><br>
+            <div class="post">
+            <h1>{{post.MainTitle}}</h1>
+            <h3>{{post.datecreated}}</h3>
+            <p>{{post.body|truncatewords:10}}</p><br>
+            </div>  
+        </div><br>
+        {% endfor %}
+    </body>
+</html>
